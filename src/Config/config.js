@@ -2,8 +2,8 @@
 const PORTAPP = process.env.PORT || 3001
 const DB_HOST = process.env.MYSQLHOST || 'localhost'
 const DB_USER = process.env.MYSQLUSER || 'root'
-const DB_PASSWORD = process.env.MYSQLPASSWORD || 'rootpass'
-const DB_NAME = process.env.DB_NAME || 'finance'
+const DB_PASSWORD = process.env.MYSQL_ROOT_PASSWORD || 'rootpass'
+const DB_NAME = process.env.MYSQLDATABASE || 'finance'
 const DB_PORT = process.env.MYSQLPORT || 3306
 
 const config = {
