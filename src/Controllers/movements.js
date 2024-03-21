@@ -21,7 +21,8 @@ function connect() {
     return new Promise((resolve, reject) => {
         connection.connect((error) => {
             if (error) {
-                let messageError = 'Error en la conexión a la base de datos' + error
+                let messageError = 'Error en la conexión a la base de datos: ' + error
+                console.log(messageError)
                 reject()
                 return
             }
