@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const movements = require('./src/Routes/routes')
-const { appConfig } = require('./src/Config/config')
+const { appConfig, db } = require('./src/Config/config')
 const {connect} = require('./src/Controllers/movements')
 const cors = require('cors')
 
@@ -20,6 +20,7 @@ app.use('/v1',movements)
 //DB connection
 connect()
 
+console.log("host: ", db.host, ", DB_USER: ", db.user, ", DB_PASSWORD: ", db.password, ", Nombre base: ", db.database, ", puerto: ", db.port )
 //Run server...
 app.listen(appConfig.port, () => {
   console.log(`servicio iniciado en puerto: ${appConfig.port}`)
