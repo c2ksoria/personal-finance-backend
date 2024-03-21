@@ -17,6 +17,7 @@ function dataResponseDefault() {
 
 //Connection to DB
 function connect() {
+    try{
     return new Promise((resolve, reject) => {
         connection.connect((error) => {
             if (error) {
@@ -27,7 +28,10 @@ function connect() {
             responseDefault.message = 'La conexión a la base de datos es exitosa'
             resolve(responseDefault)
         })
-    })
+    })}
+    catch(error){
+        console.log(error)
+    }
 }
 
 // Generic function for query all kind of data to db
