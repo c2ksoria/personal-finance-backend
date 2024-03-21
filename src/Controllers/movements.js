@@ -19,7 +19,7 @@ function dataResponseDefault() {
 function connect() {
     try{
     return new Promise((resolve, reject) => {
-        connection.connect((error) => {
+        connection((error) => {
             if (error) {
                 let messageError = 'Error en la conexión a la base de datos: ' + error
                 console.log(messageError)

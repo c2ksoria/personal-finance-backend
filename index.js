@@ -18,9 +18,9 @@ app.use(bodyParser.json())
 app.use('/v1',movements)
 
 //DB connection
-connect()
+// connect()
 
-console.log("host: ", db.host, ", user: ", db.user, ", password: ", db.password, ", Nombre base: ", db.database, ", puerto: ", db.port )
+// console.log("host: ", db.host, ", user: ", db.user, ", password: ", db.password, ", Nombre base: ", db.database, ", puerto: ", db.port )
 //Run server...
 app.listen(appConfig.port, () => {
   console.log(`servicio iniciado en puerto: ${appConfig.port}`)
