@@ -1,10 +1,4 @@
-# API Rest for Personl Finances Project
-
-## Front-end:
-
-See Front-end project at [Personal Finances project](https://github.com/c2ksoria/personal-finance-front)
-
-## Goals
+# API Rest for Personal Finances Project
 
 This project that consists of an application for personal income and expense records. Where you can perform the basic CRUD operations: Create, Read, update and delete Movement records individually. Also are added a functionality can make some records semi automatic, just for show a fast testing propourses on fornt-end.
 
@@ -20,7 +14,37 @@ Worked with mysql as the database engine and `Nodejs` on the backend and `Reactj
 - Possibility of creating multiple records at once, although this possibility is intended for sample purposes only; It works very well.
 - Management of asynchronous functions for database queries.
 
-# DB structure
+### Technologies used:
+
+Node.js and Express for the backend server.
+
+MySQL as a relational database.
+
+### Structure Project
+```
+personal-finance-backend/
+├── src/
+│   ├── Data/create_db.sh
+│   ├── Controllers/movements.js
+│   ├── Routes/routes.js
+│   ├── Config/
+│       ├────── config.js
+│       └────── connection.js
+│   └── index.js
+├── .env
+├── package.json
+└── README.md
+```
+
+controllers/: Contains the business logic for each endpoint.
+
+routes/: Defines API routes and associates them with their corresponding controllers.
+
+models/: Defines the data models and database access logic.
+
+Data: Contains the script to create the database and the necessary tables.
+
+## DB structure
 
 This project uses a database with the following tables:
 
@@ -32,12 +56,35 @@ type – defines the transaction type: Income or Expense
 movements – main transaction table with date, amount, category, and type
 ```
 
-### Enviroment Variables
-On develop or production mode you must create a few Enviroment Variables, here are an example:
+# Installation and execution
+
+## Prerequisites
+Node.js (v14 or higher)
+
+MySQL
+
+Docker (optional, but recommended for a consistent development environment)
+
+## Installation steps
+Clon repository:
 
 ```
-// Enviroment Varialble por App Port
+git clone https://github.com/c2ksoria/personal-finance-backend.git
+cd personal-finance-backend
+```
+
+### Install dependencies:
+
+```
+npm install
+```
+
+Configure environment variables in a .env file:
+
+```
+// Enviroment Varialble for App Port
 PORT = 3001
+
 //Enviroment Varialble Data Base Setting:
 DB_HOST = 'localhost'
 DB_USER = 'root'
@@ -59,6 +106,16 @@ cd /src/Data
 chmod +x create_db.sh
 ./create_db.sh
 ```
+
+## How to Run
+
+### Run on Develop
+
+npm run dev
+
+### Run on Production
+
+Use or modify start script
 
 # API - Endpoints
 
@@ -88,13 +145,3 @@ Deletes a move based on its ID.
 ### Utilities
 `POST /movements/getrandom`
 Generates or returns random moves for testing or development.
-
-## How to Run
-
-### Run on Develop
-
-npm run dev
-
-### Run on Production
-
-Use or modify start script
